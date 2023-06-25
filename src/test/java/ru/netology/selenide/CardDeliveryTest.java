@@ -26,10 +26,10 @@ public class CardDeliveryTest {
 
     @Test
     void shouldBeSuccessfullDeliveryCard() {
-        $("[data-test-id='city'] input").setValue("Санкт-Петербург");
+        $("[data-test-id='city'] input").setValue("Мурманск");
         $("[data-test-id='date'] input").sendKeys(Keys.chord(Keys.SHIFT, Keys.HOME), Keys.DELETE);
         $("[data-test-id='date'] input").setValue(dateGenerator(7));
-        $("[data-test-id='name'] input").setValue("Петров Лев");
+        $("[data-test-id='name'] input").setValue("Львов Лев");
         $("[data-test-id='phone'] input").setValue("+79219998877");
         $("[data-test-id='agreement'] .checkbox__text").click();
         $("button.button_theme_alfa-on-white").click();
@@ -39,10 +39,10 @@ public class CardDeliveryTest {
 
     @Test
     void shouldIncorrectCityInCityInput() {
-        $("[data-test-id='city'] input").setValue("Пушкин");
+        $("[data-test-id='city'] input").setValue("Ревда");
         $("[data-test-id='date'] input").sendKeys(Keys.chord(Keys.SHIFT, Keys.HOME), Keys.DELETE);
         $("[data-test-id='date'] input").setValue(dateGenerator(4));
-        $("[data-test-id='name'] input").setValue("Иванов Иван");
+        $("[data-test-id='name'] input").setValue("Львов Лев");
         $("[data-test-id='phone'] input").setValue("+79990006655");
         $("[data-test-id='agreement'] .checkbox__text").click();
         $("button.button_theme_alfa-on-white").click();
@@ -55,7 +55,7 @@ public class CardDeliveryTest {
         $("[data-test-id='city'] input").setValue("Мурманск");
         $("[data-test-id='date'] input").sendKeys(Keys.chord(Keys.SHIFT, Keys.HOME), Keys.DELETE);
         $("[data-test-id='date'] input").setValue(dateGenerator(2));
-        $("[data-test-id='name'] input").setValue("Иванов Иван");
+        $("[data-test-id='name'] input").setValue("Львов Лев");
         $("[data-test-id='phone'] input").setValue("+79996665577");
         $("[data-test-id='agreement'] .checkbox__text").click();
         $("button.button_theme_alfa-on-white").click();
@@ -64,12 +64,12 @@ public class CardDeliveryTest {
     }
 
     @Test
-    void shouldIncorrectNameInNameInput() {
-        $("[data-test-id='city'] input").setValue("Сочи");
+    void shouldBeIncorrectNameInNameInput() {
+        $("[data-test-id='city'] input").setValue("Мурманск");
         $("[data-test-id='date'] input").sendKeys(Keys.chord(Keys.SHIFT, Keys.HOME), Keys.DELETE);
         $("[data-test-id='date'] input").setValue(dateGenerator(3));
         $("[data-test-id='name'] input").setValue("Lvov Lev");
-        $("[data-test-id='phone'] input").setValue("+71234567890");
+        $("[data-test-id='phone'] input").setValue("+79212223355");
         $("[data-test-id='agreement'] .checkbox__text").click();
         $("button.button_theme_alfa-on-white").click();
         $("[data-test-id='name'].input_invalid .input__sub").shouldBe(visible)
@@ -78,7 +78,7 @@ public class CardDeliveryTest {
 
     @Test
     void shouldIncorrectPhoneInPhoneInput() {
-        $("[data-test-id='city'] input").setValue("Казань");
+        $("[data-test-id='city'] input").setValue("Мурманск");
         $("[data-test-id='date'] input").sendKeys(Keys.chord(Keys.SHIFT, Keys.HOME), Keys.DELETE);
         $("[data-test-id='date'] input").setValue(dateGenerator(3));
         $("[data-test-id='name'] input").setValue("Иванов Иван");
@@ -91,7 +91,7 @@ public class CardDeliveryTest {
 
     @Test
     void shouldUncheckedAgreement() {
-        $("[data-test-id='city'] input").setValue("Уфа");
+        $("[data-test-id='city'] input").setValue("Мурманск");
         $("[data-test-id='date'] input").sendKeys(Keys.chord(Keys.SHIFT, Keys.HOME), Keys.DELETE);
         $("[data-test-id='date'] input").setValue(dateGenerator(3));
         $("[data-test-id='name'] input").setValue("Львов Лев");
